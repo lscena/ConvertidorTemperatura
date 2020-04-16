@@ -1,2 +1,4 @@
 # ConvertidorTemperatura
-Android App - Fahrenheit to Celsius converter and vice versa
+Android App</br>
+Convert temperatures using units: Fahrenheit, Celsius, and Kelvin
+
