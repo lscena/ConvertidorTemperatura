@@ -16,8 +16,43 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="@string/temperaturaHint"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
     />
+
+    <RadioGroup
+        android:id="@+id/unitInputTemperatureRadioGroup"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/unitInputTemperatureInC"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="ºC"
+            android:checked="true"
+        />
+
+        <RadioButton
+            android:id="@+id/unitInputTemperatureInF"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="ºF"
+            android:checked="false"
+        />
+
+        <RadioButton
+            android:id="@+id/unitInputTemperatureInK"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="K"
+            android:checked="false"
+            />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/aFahrenheitButton"
@@ -30,19 +65,39 @@
 
     <Button
         android:id="@+id/aCelsiusButton"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/aCelsius"
         android:onClick="clickToCelsius"
     />
 
+    <Button
+        android:id="@+id/aKelvinButton"
+        android:layout_marginTop="0dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/aKelvin"
+        android:onClick="clickToKelvin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado"
+        android:textSize="18dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+    />
+
     <TextView
         android:id="@+id/resultadoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="resultado"
+        android:text="resultadoValor"
         android:gravity="center"
+        android:textSize="25dp"
     />
 
 </LinearLayout>

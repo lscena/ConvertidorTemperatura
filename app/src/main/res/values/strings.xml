@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ConvertidorTemperatura</string>
     <string name="temperaturaHint">Temperatura</string>
-    <string name="aFahrenheit">A Fahrenheit</string>
-    <string name="aCelsius">A Celsius</string>
+    <string name="aFahrenheit">A º Fahrenheit</string>
+    <string name="aCelsius">A º Celsius</string>
+    <string name="aKelvin">A Kelvin</string>
+    <string name="resultado">Resultado:</string>
 </resources>
