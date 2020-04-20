@@ -5,4 +5,5 @@
     <string name="aCelsius">A º Celsius</string>
     <string name="aKelvin">A Kelvin</string>
     <string name="resultado">Resultado:</string>
+    <string name="toastTextInsertTemperature">Ingrese una temperatura</string>
 </resources>

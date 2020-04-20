@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     // Creo Variables para los componentes XML
@@ -44,10 +45,62 @@ public class MainActivity extends AppCompatActivity {
     }
     // --------- Evento que se ejecuta al abrir la aplicacion - OUT ---------
 
+    //Creo una función auxiliar que se ejecuta al clickear el Boton de convertir a Fahrenheit:
+    public void clickToFahrenheit(View view){
+        //Obtengo el Input de Temperatura ingresado por el user y lo grabo en una variable:
+        String temperaturaInputStr = temperaturaEditText.getText().toString(); //lo convierto de editable a string
+
+        //Veo que se haya ingresado una temperatura (que el campo no esté vacio):
+        if (temperaturaInputStr.isEmpty() || temperaturaInputStr.equals("-")){
+            //Envío un mensaje de aviso:
+            Toast.makeText(getApplicationContext(), R.string.toastTextInsertTemperature, Toast.LENGTH_SHORT).show();
+            //No continuo
+            return;
+        }
+
+        //paso de str a float y lo grabo en otra variable:
+        Float temperaturaInputFloat = Float.parseFloat(temperaturaInputStr);
+
+        // Get the checked Radio Button ID from Radio Group
+        int selectedRadioButtonID = unitInputTemperatureRadioGroup.getCheckedRadioButtonId();
+
+        //Inicializo la variable de la temperatura Resultante:
+        Float resultado = 0.0f;
+
+        //Calculo la temperatura resultante en base a la unidad Input:
+        switch (selectedRadioButtonID){
+            case R.id.unitInputTemperatureInC:
+                //Convierto de C a F:
+                resultado = temperaturaInputFloat * 9 / 5 + 32;
+                break;
+            case R.id.unitInputTemperatureInF:
+                //Convierto de F a F:
+                resultado = temperaturaInputFloat;
+                break;
+            case R.id.unitInputTemperatureInK:
+                //Convierto de K a F:
+                resultado = (temperaturaInputFloat - 273.15f) * 9 / 5 + 32.0f;
+                break;
+        }
+
+        // Muestro el resultado:
+        //resultadoTextView.setText(Float.toString(resultado));
+        resultadoTextView.setText(resultado.toString()+"ºF");
+    }
+
     //Creo una función auxiliar que se ejecuta al clickear el Boton de convertir a Celsius:
     public void clickToCelsius(View view){
         //Obtengo el Input de Temperatura ingresado por el user y lo grabo en una variable:
         String temperaturaInputStr = temperaturaEditText.getText().toString(); //lo convierto de editable a string
+
+        //Veo que se haya ingresado una temperatura (que el campo no esté vacio):
+        if (temperaturaInputStr.isEmpty() || temperaturaInputStr.equals("-")){
+            //Envío un mensaje de aviso:
+            Toast.makeText(getApplicationContext(), R.string.toastTextInsertTemperature, Toast.LENGTH_SHORT).show();
+            //No continuo
+            return;
+        }
+
         //paso de str a float y lo grabo en otra variable:
         Float temperaturaInputFloat = Float.parseFloat(temperaturaInputStr);
 
@@ -80,43 +133,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Creo una función auxiliar que se ejecuta al clickear el Boton de convertir a Fahrenheit:
-    public void clickToFahrenheit(View view){
-        //Obtengo el Input de Temperatura ingresado por el user y lo grabo en una variable:
-        String temperaturaInputStr = temperaturaEditText.getText().toString(); //lo convierto de editable a string
-        //paso de str a float y lo grabo en otra variable:
-        Float temperaturaInputFloat = Float.parseFloat(temperaturaInputStr);
-
-        // Get the checked Radio Button ID from Radio Group
-        int selectedRadioButtonID = unitInputTemperatureRadioGroup.getCheckedRadioButtonId();
-
-        //Inicializo la variable de la temperatura Resultante:
-        Float resultado = 0.0f;
-
-        //Calculo la temperatura resultante en base a la unidad Input:
-        switch (selectedRadioButtonID){
-            case R.id.unitInputTemperatureInC:
-                //Convierto de C a F:
-                resultado = temperaturaInputFloat * 9 / 5 + 32;
-                break;
-            case R.id.unitInputTemperatureInF:
-                //Convierto de F a F:
-                resultado = temperaturaInputFloat;
-                break;
-            case R.id.unitInputTemperatureInK:
-                //Convierto de K a F:
-                resultado = (temperaturaInputFloat - 273.15f) * 9 / 5 + 32.0f;
-                break;
-        }
-
-        // Muestro el resultado:
-        //resultadoTextView.setText(Float.toString(resultado));
-        resultadoTextView.setText(resultado.toString()+"ºF");
-    }
-
-    //Creo una función auxiliar que se ejecuta al clickear el Boton de convertir a Fahrenheit:
     public void clickToKelvin(View view){
         //Obtengo el Input de Temperatura ingresado por el user y lo grabo en una variable:
         String temperaturaInputStr = temperaturaEditText.getText().toString(); //lo convierto de editable a string
+
+        //Veo que se haya ingresado una temperatura (que el campo no esté vacio):
+        if (temperaturaInputStr.isEmpty() || temperaturaInputStr.equals("-")){
+            //Envío un mensaje de aviso:
+            Toast.makeText(getApplicationContext(), R.string.toastTextInsertTemperature, Toast.LENGTH_SHORT).show();
+            //No continuo
+            return;
+        }
+
         //paso de str a float y lo grabo en otra variable:
         Float temperaturaInputFloat = Float.parseFloat(temperaturaInputStr);
 
